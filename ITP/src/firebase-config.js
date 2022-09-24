@@ -3,7 +3,7 @@ import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCdXEutBrquc63lAUPkhcmnV2yscw0K1mE",
+  apiKey: "AIzaSyCdXEutBrquc63lAUPkhcmnV2yscw0K1mE",
   authDomain: "mern-test01.firebaseapp.com",
   databaseURL: "https://mern-test01-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "mern-test01",
@@ -14,9 +14,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+//const app = initializeApp(firebaseConfig);
 
-//const app = getApps.length > 0 ? getApp() : initializeApp(firebaseConfig)
+const app = getApps.length > 0 ? getApp() : initializeApp(firebaseConfig)
 
 const firestore = getFirestore(app)
 const storage = getStorage(app)
