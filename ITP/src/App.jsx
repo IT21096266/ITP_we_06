@@ -1,7 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Header, MainContainer, CreateContainer, Order } from './components'
+import { Header, MainContainer, CreateContainer, Order, StockData } from './components'
 import { AnimatePresence } from 'framer-motion'
+
 
 const App = () => {
   return (
@@ -14,6 +15,8 @@ const App = () => {
             <Route path="/*" element={<MainContainer />} />
             <Route path="/createItem" element={<CreateContainer />} />
             <Route path="/order" element={<Order />} />
+            
+            
         </Routes>  
       </main>
 
