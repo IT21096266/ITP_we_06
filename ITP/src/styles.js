@@ -15,8 +15,14 @@ const styles = {
     logoName: "text-headingColor text-xl font-bold",
     avatar: "w-10 min-w-[40px] h-10 min-h-[40px] cursor-pointer",
 
+    formLable: "block text-sm font-medium text-gray-700",
 
-    formLable: "block text-sm font-medium text-gray-700"
+// Address List
+    ALtable: "w-full text-sm text-center text-gray-500 dark:text-gray-400 table-fixed",
+    ALthread: "text-xs",
+    ALth: " relative",
+    ALtd: "py-2 px-6 h-15 text-sm text-justify-relative text-black ",
+    ALbtn: "bg-white hover:bg-gray-300 duration-500 text-black py-2 px-4 border border-gray-100 rounded shadow"
 
 };
 
