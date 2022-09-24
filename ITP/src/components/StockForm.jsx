@@ -1,8 +1,10 @@
 import React from 'react'
-import { useState } from 'react'
+import {useNavigate } from 'react-router-dom'
+import { useState, useEffect} from 'react'
 import StockDataService from '../services/StockServices'
+import styles from '../styles';
 
-const StockForm = () => {
+const StockForm = (id, setStockId) => {
     const [product, setProduct] = useState("");
     const [brand,setBrand] = useState("");
     const [supplier,setSupplier] = useState("");
@@ -41,6 +43,18 @@ const StockForm = () => {
         setPrice("");
     };
 
+    useEffect(()=>{
+        console.log("The id here is: ",id);
+        if(id!== undefined && id !== ""){
+            //editHandler();
+        }
+    }, [id])
+
+    const navigate = useNavigate();
+  const navigateStockList = () => {
+    navigate('/stocklist');
+  };
+
   return (        
     <div>
         <form onSubmit={handleSubmit}>
@@ -76,6 +90,8 @@ const StockForm = () => {
             </div>
 
             <button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Submit</button>
+
+            <button className={`${styles.SLbtn }`} onClick={navigateStockList}>Go To List</button>
         </form>
     </div>
   )
