@@ -23,11 +23,13 @@ const styles = {
     ALth: " relative",
     ALtd: "py-2 px-6 h-15 text-sm text-justify-relative text-black ",
     ALbtn: "bg-white hover:bg-gray-300 duration-500 text-black py-2 px-4 border border-gray-100 rounded shadow",
-    //Stock List
-    SLtable:"w-full",
+
+//Stock List
+    SLtable:"w-full text-left ",
     SLbtn: "bg-white hover:bg-gray-400 duration-500 text-black py-2 px-2 border border-gray-200 rounded shadow",
     SLthead: "bg-gray-200",
-    SLtd:"px-7"
+    SLtd:"px-7 w-relative",
+    
 
 };
 

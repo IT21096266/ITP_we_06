@@ -4,6 +4,7 @@ import {useNavigate } from 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
 import { Header, MainContainer, CreateContainer, AddressForm, AddressList, AddressUpdateForm, StockForm, StockList } from './components'
 import { AnimatePresence } from 'framer-motion'
+import StockUpdateForm from './components/StockUpdateForm'
 
 
 const App = () => {
@@ -27,8 +28,9 @@ const App = () => {
             <Route path="/address" element={<AddressForm />} />
             <Route path="/addressList" element={<AddressList />} />
             <Route path="/addressUpdate" element={<AddressUpdateForm />} />
-            <Route path="/stocklist" element={<StockList getStockId={getStockIdHandler}/>}/>
-            <Route path="/stockform" element={<StockForm id={stockId} setStockId={setStockId} />}/>
+            <Route path="/stocklist" element={<StockList/>}/>
+            <Route path="/stockform" element={<StockForm/>}/>
+            <Route path='/stockupdateform' element={<StockUpdateForm /> }  />
         </Routes>  
       </main>
 
