@@ -1,0 +1,5 @@
+export {default as LoginPage} from '../pages/LoginPage'
+export {default as Home} from '../pages/Home'
+export {default as AddressForm} from '../pages/AddressForm'
+export {default as AddressList} from '../pages/AddressList'
+export {default as AddressUpdateForm} from '../pages/AddressUpdateForm'

@@ -1,8 +1,7 @@
 import React from 'react'
-import styles from '../styles'
-import Logo from '../assets/images/logo.png'
-import Avatar from '../assets/images/avatar.png'
-
+import styles from '../../Styles/styles'
+import Logo from '../../assets/logo.png'
+import Avatar from '../../assets/avatar.png'
 
 import { MdShoppingCart } from 'react-icons/md'
 import { motion } from 'framer-motion'
@@ -24,10 +23,9 @@ const Header = () => {
         <div className= "item-center flex ml-8 gap-8">
           <ul className= {`${styles.navUL}`}>
               <li className= {`${styles.navLI}`}>Home</li>
-              <li className= {`${styles.navLI}`}>Details</li>
-              <li className= {`${styles.navLI}`}>Menu</li>
               <li className= {`${styles.navLI}`}>About us</li>
-              <li className= {`${styles.navLI}`}>Service</li>
+              <li className= {`${styles.navLI}`}>Services</li>
+              <li className= {`${styles.navLI}`}>Contact Us</li>
           </ul>
           <div className= {`${styles.navCart}`}>
               <MdShoppingCart className= {`${styles.navIcon}`}/>
@@ -38,8 +36,7 @@ const Header = () => {
           <div className="relative" >
               <motion.img className={`${styles.avatar}`} 
               src={Avatar} alt="User" 
-              whileTap={{ scale: 0.6 }} 
-              />
+              whileTap={{ scale: 0.6 }} />
           </div>
           
         </div>
