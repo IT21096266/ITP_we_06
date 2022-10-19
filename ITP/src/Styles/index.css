@@ -16,6 +16,10 @@
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
 
+main{ 
+  
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -77,7 +81,7 @@
   );
 }
 
-.bg-discount-gradient {
+.bg-box-gradient {
   background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
 }
 

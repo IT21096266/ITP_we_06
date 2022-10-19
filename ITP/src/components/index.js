@@ -51,7 +51,7 @@ export const navLinks = [
           link: "/aboutUs",
         },
       ],
-    },
+    }, 
     {
       title: "Community",
       links: [
