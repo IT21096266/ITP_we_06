@@ -15,7 +15,7 @@ const styles = {
     marginX: "sm:mx-16 mx-6",
     marginY: "sm:my-16 my-6",
 
-    
+
 
     mainHeader: "fixed z-50 w-screen bg-slate-300 p-6 px-16 sticky top-0",
 
@@ -39,7 +39,7 @@ const styles = {
     ADtxt: "mt-1 block w-full shadow-sm sm:text-sm border-gray-600 rounded-md h-8 box-border hover:box-content hover:bg-slate-100 duration-500 ",
     
 // Address List
-    ALtable: "w-full text-sm text-center text-gray-500 dark:text-gray-400 table-fixed mt-4 mb-4",
+    ALtable: "w-full text-sm text-center text-gray-500 dark:text-gray-400 table-fixed mt-4 mb-4 ",
     ALthread: "text-xs",
     ALth: " relative",
     ALtd: "py-2 px-6 h-15 text-sm text-justify-relative text-white ",
