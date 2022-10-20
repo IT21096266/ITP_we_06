@@ -2,8 +2,8 @@ export {default as Header} from './Header/Header'
 export {default as Navbar} from './Nav/Navbar'
 export {default as Footer} from './Footer/Footer'
 export {default as MainContainer} from './MainContainer'
-export {default as CreateContainer} from './CreateContainer'
 export {default as HeroSlider} from './UI/HeroSlider'
+export {default as HomeContainer} from './UI/HomeContainer'
 
 import { facebook, instagram, linkedin, twitter } from '../assets';
 
