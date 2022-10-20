@@ -14,6 +14,7 @@ import facebook from "./facebook.svg";
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
+import loginBG from "./login_background.jpg"
 
 export {
   logo,
@@ -32,5 +33,5 @@ export {
   instagram,
   linkedin,
   twitter,
-
+  loginBG,
 };
