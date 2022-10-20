@@ -15,6 +15,8 @@ import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import loginBG from "./login_background.jpg"
+import deliveryTruck from "./delivery-truck.png"
+import repairMan from "./SpecialistRepairs.png"
 
 export {
   logo,
@@ -34,4 +36,6 @@ export {
   linkedin,
   twitter,
   loginBG,
+  deliveryTruck,
+  repairMan,
 };

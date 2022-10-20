@@ -6,7 +6,7 @@ import AppRoutes from "./components/Routes/Routes";
 const App = () => {
   return (
       <AnimatePresence>
-        <div className='bg-primary overflow-hidden '>
+        <div className='bg-primary overflow-hidden text-white'>
             <Navbar />
               <AppRoutes />
             <Footer />

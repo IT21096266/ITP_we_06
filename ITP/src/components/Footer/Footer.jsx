@@ -1,8 +1,16 @@
 import styles from "../../Styles/styles"
 import { logoName } from "../../assets"
 import { footerLinks, socialMedia } from "../index"
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+
+  // Checking if the page is the login page
+  const { pathname } = useLocation();
+  console.log(pathname);
+  if (pathname === "/login") return null;
+
+
   return (
     <div className='bg-primary w-full overflow-hidden mt-1 p-12'>
       <div className={`bg-primary ${styles.flexStart}`}>
@@ -12,7 +20,9 @@ const Footer = () => {
               
               <div className="flex-1 flex flex-col justify-start mr-10 ml-4">
                 <img src={logoName} alt="NewJayasekara" className="w-[300px] h-[75px] object-contain" />
-                <p className={`${styles.paragraph} mt-1 text-[13px]`}> The complete repair under our roof</p>
+                <p className={`${styles.paragraph} mt-1 text-[11px]`}> The complete repair under our roof</p>
+                <p className={`${styles.paragraph} mt-7 text-[15px] font-bold text-secondary`}> No.209,Wilgoda Circular Road,Yanthampalawa,Kurunegala</p>
+                <p className={`${styles.paragraph} mt-1 text-[20px] font-bold text-secondary`}> Tel: +94 37 223 1366</p>
               </div>
 
               <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
@@ -36,6 +46,7 @@ const Footer = () => {
               <p className="font-normal text-center text-[15px] leading-[27px] text-white mt-10 ml-4">
                 2022 New Jayasekara Auto Motors (Pvt) Ltd
               </p>
+              
               <div className="flex flex-row md:mt-0 mt-6">
                 {socialMedia.map((social, index) => (
                   // <div key={social.id}>Test</div>

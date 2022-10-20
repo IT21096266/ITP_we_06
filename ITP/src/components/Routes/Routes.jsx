@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage } from '../../pages'
-import { MainContainer, CreateContainer } from '../index'
+import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer } from '../../pages'
+import { MainContainer } from '../index'
 
 const AppRoutes = () => {
 
