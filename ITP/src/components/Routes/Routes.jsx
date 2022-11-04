@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage } from '../../pages'
+import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, SupplierForm, SupplierList, SupplierUpdate } from '../../pages'
 import { MainContainer, CreateContainer } from '../index'
 
 const AppRoutes = () => {
@@ -15,6 +15,10 @@ const AppRoutes = () => {
           <Route path="/addressUpdate" element={<AddressUpdateForm  />} />
           <Route path="/addressList" element={<AddressList />} />
           <Route path="addressList/addressUpdate/:addressID" element={<AddressUpdateForm  />} />
+          <Route path="/supplierForm" element={<SupplierForm />} />
+          <Route path="/supplierList" element={<SupplierList />} />
+          <Route path="/supplierUpdate" element={<SupplierUpdate />} />
+          <Route path="supplierList/supplierUpdate/:supID" element={<SupplierUpdate />} />
 
           {/* Have to remove when login and singin done */}
             <Route path="/login" element={<LoginPage />} />
