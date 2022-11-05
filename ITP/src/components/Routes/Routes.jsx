@@ -1,7 +1,8 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, SupplierForm, SupplierList, SupplierUpdate } from '../../pages'
-import { MainContainer, CreateContainer } from '../index'
+import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, SupplierForm, SupplierList
+          SupplierUpdate } from '../../pages'
+import { MainContainer } from '../index'
 
 const AppRoutes = () => {
 
@@ -10,6 +11,8 @@ const AppRoutes = () => {
       {(true) ? (
         <>
           <Route path="/home" element={<Home />} />
+          <Route path="/spearParts" element={<SpearParts />} />
+          <Route path="/spearParts" element={<SpearParts />} />
           <Route path="/createItem" element={<CreateContainer />} />
           <Route path="/address" element={<AddressForm />} />
           <Route path="/addressUpdate" element={<AddressUpdateForm  />} />
