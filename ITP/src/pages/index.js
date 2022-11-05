@@ -4,3 +4,8 @@ export {default as Home} from '../pages/Home'
 export {default as AddressForm} from '../pages/AddressForm'
 export {default as AddressList} from '../pages/AddressList'
 export {default as AddressUpdateForm} from '../pages/AddressUpdateForm'
+export {default as EmployeeForm} from '../pages/EmployeeForm'
+export {default as EmployeeList} from '../pages/EmployeeList'
+export {default as EmployeeUpdate} from '../pages/EmployeeUpate'
+export{default as EmployeeSalary} from '../pages/EmployeeSalary'
+
