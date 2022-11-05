@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, SupplierForm, SupplierList
+import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, SupplierForm, SupplierList,
           SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, Adminticket, TicketForm, 
           EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary } from '../../pages'
 import { MainContainer } from '../index'

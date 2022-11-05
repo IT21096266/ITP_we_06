@@ -464,8 +464,9 @@ a.list-group-item, .list-group-item-action {
   .comment .comment-body::after {
       display: none
   }
+}
   
-//STOCK LIST CSS PART
+/* STOCK LIST CSS PART */
 .SL-table{
   margin:10px;
 } 
