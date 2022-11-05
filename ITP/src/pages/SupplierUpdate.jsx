@@ -5,7 +5,7 @@ import styles from '../Styles/styles';
 import { useNavigate, useParams } from 'react-router-dom'
 
 
-const SupplierUpdate = () => { 
+const SupplierUpdate = () => {   
     const [sName, setsName] = useState(""); 
     const [country, setCountry] = useState("");
     const [sAddress, setsAddress] = useState("");
