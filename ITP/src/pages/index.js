@@ -22,4 +22,8 @@ export {default as CreateContainer} from '../pages/CreateContainer'
 export {default as SupplierForm} from '../pages/SupplierForm'
 export {default as SupplierList} from '../pages/SupplierList'
 export {default as SupplierUpdate} from '../pages/SupplierUpdate'
+
+export{default as EmployeeReport}from '../pages/EmployeeReport'
+export{default as EmployeeImageAdd} from '../pages/EmployeeImageAdd'
 export {default as SupplierReport} from '../pages/SupplierReport'
+

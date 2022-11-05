@@ -1,9 +1,10 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 
-import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, OnlineItemList,
-          SupplierForm, SupplierList,SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, StockReport,
-          Adminticket, TicketForm, EmployeeForm, EmployeeList, EmployeeUpdate, EmployeeSalary, SupplierReport } from '../../pages'
+import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts,  OnlineItemList, 
+          SupplierForm, SupplierList, SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, StockReport, 
+          Adminticket, TicketForm, EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary,EmployeeReport,EmployeeImageAdd, SupplierReport} from '../../pages'
+          
 
 import { MainContainer } from '../index'
 
@@ -29,6 +30,9 @@ const AppRoutes = () => {
           <Route path="/employeeUpdate" element={<EmployeeUpdate  />} />
           <Route path="employeeList/employeeUpdate/:EmployeeID" element={<EmployeeUpdate />} />
           <Route path="employeeSalary" element={<EmployeeSalary/>}/>
+          <Route path="/employeeReport" element={<EmployeeReport/>}/>
+          <Route path="/employeeImageAdd" element={<EmployeeImageAdd />} />
+          
           <Route path="/stocklist" element={<StockList/>}/>
           <Route path="/stockform" element={<StockForm/>}/>
           <Route path='/stockupdateform' element={<StockUpdateForm/> }/>
