@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, SupplierForm, SupplierList,
-          SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, Adminticket, TicketForm, 
+          SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, Adminticket, TicketForm, StockReport,
           EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary } from '../../pages'
 import { MainContainer } from '../index'
 
@@ -32,6 +32,7 @@ const AppRoutes = () => {
           <Route path='/stockupdateform' element={<StockUpdateForm/> }/>
           <Route path="/stocklist/stockupdateform/:stockID" element={<StockUpdateForm/> }/>
           <Route path="/stocksearch" element={<StockSearch/>}/>
+          <Route path="/stockreport" element={<StockReport/>}/>
           <Route path="/supplierForm" element={<SupplierForm />} />
           <Route path="/supplierList" element={<SupplierList />} />
           <Route path="/supplierUpdate" element={<SupplierUpdate />} />
