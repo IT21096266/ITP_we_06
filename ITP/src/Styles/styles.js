@@ -43,7 +43,14 @@ const styles = {
     ALthread: "text-xs",
     ALth: " relative",
     ALtd: "py-2 px-6 h-15 text-sm text-justify-relative text-white ",
-    ALbtn: "bg-blue-gradient text-black py-2 px-4 rounded shadow mb-2 hover:bg-blue-200 hover:text-blue-800 duration-500"
+    ALbtn: "bg-blue-gradient text-black py-2 px-4 rounded shadow mb-2 hover:bg-blue-200 hover:text-blue-800 duration-500",
+
+//Stock List
+    SLtable:"w-full text-left text-white SL-table",
+    SLbtn: "bg-btn-gradient text-headingColor duration-500 text-black py-2 px-2 rounded shadow SL-tbl-btn",
+    SLthead: "SL-thead-gradient",
+    SLtd:"px-7 w-relative",
+    ADbtn:"S-btn bg-btn-gradient hover:bg-btn-gradient duration-500 text-black py-2 px-2 rounded shadow SL-table"
 
 };
 

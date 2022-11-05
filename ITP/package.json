@@ -9,6 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@progress/kendo-drawing": "^1.17.2",
+    "@progress/kendo-licensing": "^1.2.2",
+    "@progress/kendo-react-buttons": "^5.9.0",
+    "@progress/kendo-react-pdf": "^5.9.0",
+    "@progress/kendo-theme-default": "^5.10.0",
     "firebase": "^9.10.0",
     "framer-motion": "^7.3.5",
     "jspdf": "^2.5.1",
@@ -18,7 +23,7 @@
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.0.3",
     "react-icons": "^4.4.0",
-    "react-router-dom": "^6.4.0",
+    "react-router-dom": "^6.4.3",
     "react-slick": "^0.29.0",
     "reactstrap": "^9.1.4",
     "universal-cookie": "^4.0.4"

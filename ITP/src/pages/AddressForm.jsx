@@ -21,7 +21,6 @@ const AddressForm = () => {
     const [mNumber, setMnumber] = useState("")
     const [message, setMessage] = useState({error: false, msg: ""})
 
-
     const handleSubmit = async(e) =>{
         e.preventDefault()
         const newAddress ={

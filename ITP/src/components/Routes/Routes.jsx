@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, SupplierForm, SupplierList
-          SupplierUpdate } from '../../pages'
+          SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch } from '../../pages'
 import { MainContainer } from '../index'
 
 const AppRoutes = () => {
@@ -18,7 +18,12 @@ const AppRoutes = () => {
           <Route path="/addressUpdate" element={<AddressUpdateForm  />} />
           <Route path="/addressList" element={<AddressList />} />
           <Route path="addressList/addressUpdate/:addressID" element={<AddressUpdateForm  />} />
-          <Route path="/supplierForm" element={<SupplierForm />} />
+           <Route path="/stocklist" element={<StockList/>}/>
+          <Route path="/stockform" element={<StockForm/>}/>
+          <Route path='/stockupdateform' element={<StockUpdateForm/> }/>
+          <Route path="/stocklist/stockupdateform/:stockID" element={<StockUpdateForm/> }/>
+          <Route path="/stocksearch" element={<StockSearch/>}/>
+           <Route path="/supplierForm" element={<SupplierForm />} />
           <Route path="/supplierList" element={<SupplierList />} />
           <Route path="/supplierUpdate" element={<SupplierUpdate />} />
           <Route path="supplierList/supplierUpdate/:supID" element={<SupplierUpdate />} />
@@ -38,5 +43,4 @@ const AppRoutes = () => {
     </Routes>
   )
 }
-
 export default AppRoutes
