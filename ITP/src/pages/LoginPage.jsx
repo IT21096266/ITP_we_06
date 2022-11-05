@@ -7,15 +7,16 @@ import { app } from '../services/firebase-config';
 import { useState } from 'react';
 import { useStateValue } from '../context/StateProvider'
 import { actionType } from '../context/reducer'
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
 
     const firebaseAuth = getAuth(app);
     const provider = new GoogleAuthProvider();
-
+    const navigate = useNavigate()
     const [{user}, dipatch] = useStateValue()
 
-// For google auth. login               window.location.reload();
+//------------------- For google auth. login
 
     const googleLogin = async () =>{
         if(!user){
@@ -24,7 +25,8 @@ const LoginPage = () => {
                 type : actionType.SET_USER,
                 user : providerData[0]
             })
-            localStorage.setItem('user', JSON.stringify(providerData[0]))  
+            localStorage.setItem('user', JSON.stringify(providerData[0])) 
+            navigate('/home') 
         }
     }
 
