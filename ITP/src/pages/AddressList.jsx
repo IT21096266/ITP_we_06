@@ -4,7 +4,7 @@ import BuyerDataService from '../services/address.services'
 import styles from '../Styles/styles'
 import Helmet from "../components/Helmet/Helmet";
 
-const AddressList = ({getAddressID}) => {
+const AddressList = () => {
 
     const [address, setAddress] = useState([])
 
