@@ -21,7 +21,7 @@ const App = () => {
 
   return (
       <AnimatePresence>
-        <div className='bg-primary overflow-hidden text-white justify-between'>
+        <div className='bg-primary overflow-hidden text-white'>
             <Navbar />
               <AppRoutes />
             <Footer />
