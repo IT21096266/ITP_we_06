@@ -36,6 +36,10 @@ const EmployeeList = ({ getEmployeeID }) => {
     navigate("/employeeSalary");
   };
 
+  const navigateEmployeeReport = () => {
+    navigate("/employeeReport");
+  };
+
   return (
     <div class="overflow-x-auto relative">
       <div class="flex justify-center ...">
@@ -109,7 +113,13 @@ const EmployeeList = ({ getEmployeeID }) => {
       </table>
 
       <div></div>
+      <div class="flex justify-center ...">
+    <button className={`${styles.ALbtn}`} onClick={navigateEmployeeReport}>
+      Employee Report
+    </button>
+  </div>
     </div>
+    
   );
 };
 
