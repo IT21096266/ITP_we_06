@@ -2,8 +2,11 @@ export {default as Header} from './Header/Header'
 export {default as Navbar} from './Nav/Navbar'
 export {default as Footer} from './Footer/Footer'
 export {default as MainContainer} from './MainContainer'
-export {default as CreateContainer} from './CreateContainer'
 export {default as HeroSlider} from './UI/HeroSlider'
+export {default as Loader} from './UI/Loader'
+export {default as RowContainer} from './UI/RowContainer'
+export {default as CartContainer} from './UI/CartContainer'
+export {default as CartItem} from './UI/CartItem'
 
 import { facebook, instagram, linkedin, twitter } from '../assets';
 
@@ -11,18 +14,27 @@ export const navLinks = [
     {
       id: "home",
       title: "Home",
-    },
-    {
-      id: "aboutUs",
-      title: "About Us",
+      link: "/home",
     },
     {
       id: "services",
       title: "Services",
+      link: "/home",
+    },
+    {
+      id: "spearParts",
+      title: "Spear Parts",
+      link: "/home",
+    },
+    {
+      id: "aboutUs",
+      title: "About Us",
+      link: "/home",
     },
     {
       id: "contact",
       title: "Contact Us",
+      link: "/home",
     },
   ];
   
