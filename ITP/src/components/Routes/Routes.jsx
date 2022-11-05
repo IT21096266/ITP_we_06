@@ -1,8 +1,10 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, SupplierForm, SupplierList,
-          SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, Adminticket, TicketForm, 
-          EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary } from '../../pages'
+
+import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, OnlineItemList,
+          SupplierForm, SupplierList,SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, StockReport,
+          Adminticket, TicketForm, EmployeeForm, EmployeeList, EmployeeUpdate, EmployeeSalary } from '../../pages'
+
 import { MainContainer } from '../index'
 
 const AppRoutes = () => {
@@ -13,15 +15,15 @@ const AppRoutes = () => {
         <>
           <Route path="/home" element={<Home />} />
           <Route path="/spearParts" element={<SpearParts />} />
-          <Route path="/spearParts" element={<SpearParts />} />
           <Route path="/createItem" element={<CreateContainer />} />
           <Route path="/address" element={<AddressForm />} />
           <Route path="/addressUpdate" element={<AddressUpdateForm  />} />
           <Route path="/addressList" element={<AddressList />} />
+          <Route path="/onlineItemList" element={<OnlineItemList />} />
+          <Route path="addressList/addressUpdate/:addressID" element={<AddressUpdateForm  />} />
           <Route path="/Mytickets" element={<Mytickets />} />
           <Route path="/Adminticket" element={<Adminticket />} />
           <Route path="/TicketForm" element={<TicketForm />} />
-          <Route path="addressList/addressUpdate/:addressID" element={<AddressUpdateForm  />} />
           <Route path="/employee" element={<EmployeeForm />} />
           <Route path="/employeeList" element={<EmployeeList  />} />
           <Route path="/employeeUpdate" element={<EmployeeUpdate  />} />
@@ -32,6 +34,7 @@ const AppRoutes = () => {
           <Route path='/stockupdateform' element={<StockUpdateForm/> }/>
           <Route path="/stocklist/stockupdateform/:stockID" element={<StockUpdateForm/> }/>
           <Route path="/stocksearch" element={<StockSearch/>}/>
+          <Route path="/stockreport" element={<StockReport/>}/>
           <Route path="/supplierForm" element={<SupplierForm />} />
           <Route path="/supplierList" element={<SupplierList />} />
           <Route path="/supplierUpdate" element={<SupplierUpdate />} />

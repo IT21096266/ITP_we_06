@@ -97,21 +97,25 @@ const Navbar = () => {
                         exit={{opacity : 1, scale : 2}}
                         className='p-3 bg-black-gradient text-white text-[12px] absolute top-15 right-10 mx-1 my-2 min-w-[110px] rounded-xl'>
                           {users && users.email === "it21096266@my.sliit.lk" && (
-                            <Link to="/createItem">
+                            <Link to="/onlineItemList">
                                 <p onClick={() => setIsMenu(false)}
                                  className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
                                   Add Items <MdAdd />
                                 </p>
                             </Link>
                             )}
-                            <p onClick={() => setIsMenu(false)}
-                             className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
-                              Settings <MdSettings />
-                            </p>
-                            <p onClick={logout}
-                            className='px-4 py-2 flex items-center gap-1 cursor-pointer text-semibold text-gradient hover: text-dimWhite transition-all duration-100 ease-in-out'>
-                              Logout <MdLogout className='text-gradient' />
-                            </p>
+                            <Link to="/addressList">
+                              <p onClick={() => setIsMenu(false)}
+                              className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
+                                Add Address
+                              </p>
+                            </Link>
+                            <Link to="/addressList">
+                              <p onClick={logout}
+                              className='px-4 py-2 flex items-center gap-1 cursor-pointer text-semibold text-gradient hover: text-dimWhite transition-all duration-100 ease-in-out'>
+                                Logout <MdLogout className='text-gradient' />
+                              </p>
+                            </Link>
                       </motion.div>
                     )
                   }
