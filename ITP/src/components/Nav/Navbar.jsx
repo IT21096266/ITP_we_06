@@ -7,11 +7,15 @@ import { MdShoppingCart, MdSettings, MdLogout, MdAdd } from 'react-icons/md'
 import { navLinks } from '../index'
 import { Link, useLocation } from 'react-router-dom'
 import { actionType } from '../../context/reducer'
+import { useStateValue } from '../../context/StateProvider'
 
 const Navbar = () => {
 
   const [toggle, setToggle] = useState(false)
   const [isMenu, setIsMenu] = useState(false)
+
+  //For Cart
+  const [{ cartShow, cartItems }, dispatch] = useStateValue()
 
    // Checking if the page is the login page
   const { pathname } = useLocation();
@@ -28,11 +32,19 @@ const Navbar = () => {
     window.location.reload();
   }
 
+  // Cart Icon
+  const showCart = () => {
+    dispatch({
+      type: actionType.SET_CART_SHOW,
+      cartShow: !cartShow,
+    })
+  }
+
   return (
 
-    <div className={`${styles.paddingX} ${styles.flexCenter} bg-primary w-full overflow-hidden `}>
+    <div className={`${styles.paddingX} ${styles.flexCenter} bg-primary w-full overflow-hidden`}>
       <div className={`${styles.boxWidth}`}>
-        <nav className="w-full flex py-6 justify-between items-center navbar">
+        <nav className="w-full flex py-6 justify-between items-center navbar ">
 
   {/* ==================================== main navigation ==================================== */}  
           <img src={logo} alt="New Jayasekara Auto Motors (Pvt) Ltd" className="w-[50px] h-[50px]" />
@@ -48,18 +60,20 @@ const Navbar = () => {
                 exit={{opacity : 0, x: 200}}>
                   {/* {console.log("Error check: ",nav.id)}                                  */}
                   <li  className={`font-normal cursor-pointer text-[13px] text-white mr-10`} >
-                    <a href={`#${nav.id}`}> {nav.title} </a>
+                    <a href={`${nav.id}`}> {nav.title} </a>
                   </li>
                 </motion.ul>
                 ))}
             
       {/* ===== Cart Icon ======= */} 
               <li>
-                <div className= {`${styles.navCart} mr-5`}>
+                <div className= {`${styles.navCart} mr-5`} onClick={showCart}>
                   <MdShoppingCart className= {`${styles.navIcon}`}/>
-                    <div className= {`${styles.navCartList}`}>
-                        <p className= {`${styles.navCartNum}`}>2</p>
-                    </div>
+                    {cartItems && cartItems.length > 0 &&(
+                      <div className= {`${styles.navCartList}`}>
+                        <p className= {`${styles.navCartNum}`}> {cartItems.length} </p>
+                      </div>
+                    )}
               </div>
               </li>
       {/* ===== Profile Icon ======= */} 
@@ -108,11 +122,13 @@ const Navbar = () => {
           <div className="sm:hidden flex flex-1 justify-end items-center">
       
       {/* ===== Cart Icon ======= */}
-            <div className= {`${styles.navCart} mt-1 mr-7`}>
+            <div className= {`${styles.navCart} mt-1 mr-7`}onClick={showCart}>
               <MdShoppingCart className= {`${styles.navIcon}`}/>
-                <div className= {`${styles.navCartList}`}>
-                    <p className= {`${styles.navCartNum}`}>2</p>
-                </div>
+                {cartItems && cartItems.length > 0 &&(
+                    <div className= {`${styles.navCartList}`}>
+                      <p className= {`${styles.navCartNum}`}> {cartItems.length} </p>
+                    </div>
+                  )}
             </div>   
               <img 
                 src={toggle ? close : menu} alt="menu" 

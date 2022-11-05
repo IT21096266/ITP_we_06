@@ -17,6 +17,7 @@ import twitter from "./twitter.svg";
 import loginBG from "./login_background.jpg"
 import deliveryTruck from "./delivery-truck.png"
 import repairMan from "./SpecialistRepairs.png"
+import emptyCart from "./emptyCart.png"
 
 export {
   logo,
@@ -38,4 +39,5 @@ export {
   loginBG,
   deliveryTruck,
   repairMan,
+  emptyCart,
 };

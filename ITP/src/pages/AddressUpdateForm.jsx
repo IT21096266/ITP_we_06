@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { async } from '@firebase/util'
 import BuyerDataService from '../services/address.services'
 import styles from '../Styles/styles'
@@ -20,7 +20,7 @@ const AddressUpdateForm = () => {
     const [mNumber, setMnumber] = useState("")
     const [message, setMessage] = useState({error: false, msg: ""})
 
-    const [ID, setID] = useState("")
+    const navigate = useNavigate()
     
     const handleSubmit = async(e) =>{
         e.preventDefault()
@@ -39,12 +39,10 @@ const AddressUpdateForm = () => {
         try{
             if(addressID !== undefined && addressID !== ""){
                 await BuyerDataService.updateAddress(addressID, newAddress)
-                setAD("")
-                setID("")
                 alert("Update added successfully!")
-                navigate('/address')
+                navigate('/addressList')
             }else{
-                navigate('/address')
+                navigate('/addressList')
             }
         }catch (err){
             setMessage({error: false, msg: err.message})
@@ -102,7 +100,7 @@ return (
                                 <div className="mt-5 md:mt-0 md:col-span-2">
 
                                     <form onSubmit={handleSubmit} >
-                                    <div className="shadow overflow-hidden sm:rounded-md">
+                                    <div className="shadow overflow-hidden sm:rounded-md text-black">
                                         <div className="px-4 py-5 bg-white sm:p-6">
                                         <div className="grid grid-cols-6 gap-6">
 
