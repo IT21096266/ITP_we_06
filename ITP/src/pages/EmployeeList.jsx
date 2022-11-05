@@ -78,6 +78,7 @@ const EmployeeList = ({ getEmployeeID }) => {
           Salary Calculator
         </button>
       </div>
+      <br/>
  <center><input
                   type="text"
                   className="mt-1 block w-full shadow-sm sm:text-sm border-gray-600 rounded-md h-8 box-border hover:box-content hover:bg-slate-100 duration-500 "
