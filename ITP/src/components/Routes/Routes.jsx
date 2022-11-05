@@ -1,7 +1,8 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
-import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage,Mytickets,Adminticket,TicketForm} from '../../pages'
-import { MainContainer, CreateContainer } from '../index'
+import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, SupplierForm, SupplierList
+          SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, Adminticket, TicketForm } from '../../pages'
+import { MainContainer } from '../index'
 
 const AppRoutes = () => {
 
@@ -10,6 +11,8 @@ const AppRoutes = () => {
       {(true) ? (
         <>
           <Route path="/home" element={<Home />} />
+          <Route path="/spearParts" element={<SpearParts />} />
+          <Route path="/spearParts" element={<SpearParts />} />
           <Route path="/createItem" element={<CreateContainer />} />
           <Route path="/address" element={<AddressForm />} />
           <Route path="/addressUpdate" element={<AddressUpdateForm  />} />
@@ -18,6 +21,15 @@ const AppRoutes = () => {
           <Route path="/Adminticket" element={<Adminticket />} />
           <Route path="/TicketForm" element={<TicketForm />} />
           <Route path="addressList/addressUpdate/:addressID" element={<AddressUpdateForm  />} />
+           <Route path="/stocklist" element={<StockList/>}/>
+          <Route path="/stockform" element={<StockForm/>}/>
+          <Route path='/stockupdateform' element={<StockUpdateForm/> }/>
+          <Route path="/stocklist/stockupdateform/:stockID" element={<StockUpdateForm/> }/>
+          <Route path="/stocksearch" element={<StockSearch/>}/>
+           <Route path="/supplierForm" element={<SupplierForm />} />
+          <Route path="/supplierList" element={<SupplierList />} />
+          <Route path="/supplierUpdate" element={<SupplierUpdate />} />
+          <Route path="supplierList/supplierUpdate/:supID" element={<SupplierUpdate />} />
 
           {/* Have to remove when login and singin done */}
             <Route path="/login" element={<LoginPage />} />
@@ -34,5 +46,4 @@ const AppRoutes = () => {
     </Routes>
   )
 }
-
 export default AppRoutes
