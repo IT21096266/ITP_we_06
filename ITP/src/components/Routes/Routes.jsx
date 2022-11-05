@@ -1,9 +1,11 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
+
 import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts,  OnlineItemList, 
           SupplierForm, SupplierList, SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, StockReport, 
-          Adminticket, TicketForm, EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary,EmployeeReport,EmployeeImageAdd} from '../../pages'
+          Adminticket, TicketForm, EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary,EmployeeReport,EmployeeImageAdd, SupplierReport} from '../../pages'
           
+
 import { MainContainer } from '../index'
 
 const AppRoutes = () => {
@@ -41,6 +43,7 @@ const AppRoutes = () => {
           <Route path="/supplierList" element={<SupplierList />} />
           <Route path="/supplierUpdate" element={<SupplierUpdate />} />
           <Route path="supplierList/supplierUpdate/:supID" element={<SupplierUpdate />} />
+          <Route path="/supplierReport" element={<SupplierReport/>}/>
           
           {/* Have to remove when login and singin done */}
             <Route path="/login" element={<LoginPage />} />
