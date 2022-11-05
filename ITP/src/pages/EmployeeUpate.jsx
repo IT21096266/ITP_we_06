@@ -43,7 +43,7 @@ const EmployeeUpdate = () => {
         await EmployeeDataService.updateEmployee(EmployeeID, updateEmployee);
 
         alert("Employee Updated  successfully!");
-        navigate("/employee");
+        navigate("/employeeList");
       } else {
         navigate("/employee");
         setMessage({ error: false, msg: "Update failed!" });
@@ -132,7 +132,7 @@ const EmployeeUpdate = () => {
                                   setFirstName(e.target.value);
                                 }}
                                 required
-                                className="mt-1 block w-full shadow-sm sm:text-sm border-gray-600 rounded-md h-8 box-border hover:box-content hover:bg-slate-100 duration-500 "
+                                className="mt-1 block w-full shadow-sm sm:text-sm border-black-600 rounded-md h-8 box-border hover:box-content hover:bg-slate-100 duration-500 "
                               />
                             </div>
 

@@ -5,8 +5,12 @@ import Helmet from "../components/Helmet/Helmet";
 import img from "../assets/Employee/3.jpg";
 
 const EmployeeSalary = () => {
+  
   const navigate = useNavigate();
 
+  const navigateEmployeeList = () => {
+    navigate("/employeeList");
+  };
   const [salary, setSalary] = useState();
   var [firstName, setFirstName] = useState();
   var [tax, setTax] = useState();
@@ -34,6 +38,18 @@ const EmployeeSalary = () => {
         <div className={`bg-primary ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <Helmet title="Employee Form">
+
+            <div class="flex justify-center ...">
+                <button
+                  className={`${styles.ALbtn}`}
+                  onClick={navigateEmployeeList}
+                >
+                  Employee List
+                </button>
+              </div>
+              <br />
+              <br />
+
               <div class="mt-12 sm:mt-0">
                 <div class="md:grid md:grid-cols-3 md:gap-3">
                   <div class="md:col-span-1">
