@@ -32,7 +32,7 @@ const AppRoutes = () => {
           <Route path='/stockupdateform' element={<StockUpdateForm/> }/>
           <Route path="/stocklist/stockupdateform/:stockID" element={<StockUpdateForm/> }/>
           <Route path="/stocksearch" element={<StockSearch/>}/>
-           <Route path="/supplierForm" element={<SupplierForm />} />
+          <Route path="/supplierForm" element={<SupplierForm />} />
           <Route path="/supplierList" element={<SupplierList />} />
           <Route path="/supplierUpdate" element={<SupplierUpdate />} />
           <Route path="supplierList/supplierUpdate/:supID" element={<SupplierUpdate />} />
