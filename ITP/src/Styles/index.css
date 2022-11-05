@@ -535,3 +535,11 @@ a.list-group-item, .list-group-item-action {
   border: 3px solid #00E8F3 ;
   padding: 10px;
 }
+.sonali-form{
+
+  width:100%;
+
+  background: linear-gradient(90deg, rgba(32,32,32,1) 0%, rgba(32,32,32,1) 51%);
+
+  border-radius: 15px;
+}
