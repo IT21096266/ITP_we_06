@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts, SupplierForm, SupplierList,
           SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, Adminticket, TicketForm, 
-          EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary,EmployeeReport } from '../../pages'
+          EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary,EmployeeReport,EmployeeImageAdd} from '../../pages'
 import { MainContainer } from '../index'
 
 const AppRoutes = () => {
@@ -28,6 +28,8 @@ const AppRoutes = () => {
           <Route path="employeeList/employeeUpdate/:EmployeeID" element={<EmployeeUpdate />} />
           <Route path="employeeSalary" element={<EmployeeSalary/>}/>
           <Route path="/employeeReport" element={<EmployeeReport/>}/>
+          <Route path="/employeeImageAdd" element={<EmployeeImageAdd />} />
+          
           <Route path="/stocklist" element={<StockList/>}/>
           <Route path="/stockform" element={<StockForm/>}/>
           <Route path='/stockupdateform' element={<StockUpdateForm/> }/>
