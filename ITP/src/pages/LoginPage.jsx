@@ -15,7 +15,7 @@ const LoginPage = () => {
     const provider = new GoogleAuthProvider();
     const navigate = useNavigate()
     const [{user}, dipatch] = useStateValue()
-
+    const [authenticated, setauthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
 //------------------- For google auth. login
 
     const googleLogin = async () =>{
@@ -25,7 +25,8 @@ const LoginPage = () => {
                 type : actionType.SET_USER,
                 user : providerData[0]
             })
-            localStorage.setItem('user', JSON.stringify(providerData[0])) 
+            localStorage.setItem('user', JSON.stringify(providerData[0]))
+            localStorage.setItem("authenticated", true)
             navigate('/home') 
         }
     }

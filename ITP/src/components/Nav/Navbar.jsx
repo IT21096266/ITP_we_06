@@ -30,6 +30,7 @@ const Navbar = () => {
     setIsMenu(false)
     localStorage.clear()
     window.location.reload();
+    localStorage.setItem("authenticated", false)
   }
 
   // Cart Icon
@@ -96,7 +97,8 @@ const Navbar = () => {
                         animate={{opacity : 5, scale : 1}}
                         exit={{opacity : 1, scale : 2}}
                         className='p-3 bg-black-gradient text-white text-[12px] absolute top-15 right-10 mx-1 my-2 min-w-[110px] rounded-xl'>
-                          
+
+        {/* For Order */}
                           {users && users.email === "it21096266@my.sliit.lk" && (
                             <Link to="/onlineItemList">
                                 <p onClick={() => setIsMenu(false)}
@@ -105,15 +107,35 @@ const Navbar = () => {
                                 </p>
                             </Link>
                             )}
-
+        {/* For Stock */}
                             {users && users.email === "it21132346@my.sliit.lk" && (
-                            <Link to="/stocklist">
-                                <p onClick={() => setIsMenu(false)}
-                                 className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
-                                  Stock List <MdAdd />
-                                </p>
-                            </Link>
+                              <Link to="/stocklist">
+                                  <p onClick={() => setIsMenu(false)}
+                                  className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
+                                    Stock List <MdAdd />
+                                  </p>
+                              </Link>
                             )}
+
+        {/* For Employee */}
+                            {users && users.email === "it21010330@my.sliit.lk" && (
+                              <Link to="/employeeList">
+                                  <p onClick={() => setIsMenu(false)}
+                                  className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
+                                    Employee Management <MdAdd />
+                                  </p>
+                              </Link>
+                              )}
+        {/* For Stock */}
+                            {users && users.email === "it21008528@my.sliit.lk" && (
+                              <Link to="/employeeList">
+                                  <p onClick={() => setIsMenu(false)}
+                                  className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
+                                    Employee Management <MdAdd />
+                                  </p>
+                              </Link>
+                              )}
+
                             <Link to="/addressList">
                               <p onClick={() => setIsMenu(false)}
                               className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
@@ -121,7 +143,14 @@ const Navbar = () => {
                               </p>
                             </Link>
 
-                            <Link to="/addressList">
+                            <Link to="/Mytickets">
+                              <p onClick={() => setIsMenu(false)}
+                              className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
+                                View Tickets
+                              </p>
+                            </Link>
+
+                            <Link to="/login">
                               <p onClick={logout}
                               className='px-4 py-2 flex items-center gap-1 cursor-pointer text-semibold text-gradient hover: text-dimWhite transition-all duration-100 ease-in-out'>
                                 Logout <MdLogout className='text-gradient' />
