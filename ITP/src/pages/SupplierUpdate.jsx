@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import styles from "../Styles/styles";
 import { useNavigate, useParams } from "react-router-dom";
+import SupplierDataService from '../services/supplier.services'
 
 const SupplierUpdate = () => {
   const [sName, setsName] = useState("");
@@ -14,7 +15,7 @@ const SupplierUpdate = () => {
 
   const [message, setMessage] = useState({ error: false, msg: "" });
 
-  const handleSubmit = async (e) => {
+  const handlesupplierSubmit = async (e) => {
     e.preventDefault();
     const newSupplier = {
       sName,
@@ -64,6 +65,11 @@ const SupplierUpdate = () => {
     }
   }, [supID]);
 
+  const navigate = useNavigate();
+  const navigateSupplierList = () => {
+    navigate("/supplierlist");
+  };
+
   return (
     <div className="bg-primary w-full overflow-hidden">
       <main className="mt-1 p-12 w-full ">
@@ -85,7 +91,7 @@ const SupplierUpdate = () => {
 
                   <div className="mt-5 md:mt-0 md:col-span-2">
                     <form
-                      onSubmit={handleSubmit}
+                      onSubmit={handlesupplierSubmit}
                       className="bg-discount-gradient text-black"
                     >
                       <div className="shadow overflow-hidden sm:rounded-md">
@@ -208,6 +214,9 @@ const SupplierUpdate = () => {
                               className={`${styles.ALbtn} font-semibold`}
                             >
                               Save
+                            </button>
+                            <button className={`${styles.ALbtn} font-semibold`} onClick={navigateSupplierList} >
+                              Go To List
                             </button>
                           </div>
                         </div>
