@@ -50,8 +50,7 @@ const AddressList = () => {
                           <th scope="col" className={`${styles.ALth}`}>
                             <button
                               className={`${styles.ALbtn} font-semibold`}
-                              onClick={navigateAddressForm}
-                            >
+                              onClick={navigateAddressForm}>
                               Add New Address
                             </button>
                           </th>
