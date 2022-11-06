@@ -18,6 +18,10 @@ const EmployeeForm = () => {
     navigate("/employeeList");
   };
 
+  const navigateEmployeeImageAdd = () => {
+    navigate("/employeeImageAdd");
+  };
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [position, setPosition] = useState("");
@@ -217,6 +221,17 @@ const EmployeeForm = () => {
                     </form>
                   </div>
                 </div>
+                <br />
+              <br />
+                <div class="flex justify-center ...">
+                <button
+                  className={`${styles.ALbtn}`}
+                  onClick={navigateEmployeeImageAdd}
+                >
+                  Add Employee Images
+                </button>
+
+              </div>
               </div>
             </Helmet>
           </div>

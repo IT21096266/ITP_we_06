@@ -5,7 +5,11 @@ import styles from "../Styles/styles";
 import Helmet from "../components/Helmet/Helmet";
 
 const EmployeeList = ({ getEmployeeID }) => {
+
   const [employee, setEmployee] = useState([]);
+  const [value, setValue] = useState("");
+  const [filterTable, setTablefilter] = useState([]);
+  const [filterState, setFilterState] = useState(0);
 
   const navigate = useNavigate(); // Navigate
 
@@ -36,6 +40,31 @@ const EmployeeList = ({ getEmployeeID }) => {
     navigate("/employeeSalary");
   };
 
+  const navigateEmployeeReport = () => {
+    navigate("/employeeReport");
+  };
+
+  const filterData = (e) => {
+    if (e.target.value != "") {
+      console.log("------------------>> " + e.target.value)
+      setValue(e.target.value);
+      const filterTable = employee.filter((o) =>
+        Object.keys(o).some((k) =>
+          String(o[k]).toLowerCase().includes(e.target.value.toLowerCase())
+        )
+      );
+      console.log("--------------->"+ filterTable)
+      setTablefilter([...filterTable]);
+      setFilterState(1);
+      console.log("+++++++++++++++++++++" + filterState)
+    } else {
+      setValue(e.target.value);
+      setEmployee([...employee]);
+      setFilterState(0);
+
+    }
+  };
+
   return (
     <div class="overflow-x-auto relative">
       <div class="flex justify-center ...">
@@ -49,6 +78,18 @@ const EmployeeList = ({ getEmployeeID }) => {
           Salary Calculator
         </button>
       </div>
+      <br/>
+ <center><input
+                  type="text"
+                  className="mt-1 block w-full shadow-sm sm:text-sm border-gray-600 rounded-md h-8 box-border hover:box-content hover:bg-slate-100 duration-500 "
+                              
+                  placeholder="Search"
+                 
+                  
+                  value={value}
+                  onChange={filterData}
+                /></center>
+     
 
       <div class="whitespace-pre-wrap ..."> </div>
       <table className={`${styles.ALtable}`}>
@@ -79,7 +120,8 @@ const EmployeeList = ({ getEmployeeID }) => {
           </tr>
         </thead>
         <tbody>
-          {employee.map((doc, index) => {
+        { (filterState == 0 ) ?
+          employee.map((doc, index) => {
             return (
               <tr key={doc.id}>
                 <td className={`${styles.ALtd}`}>{index + 1}</td>
@@ -104,12 +146,47 @@ const EmployeeList = ({ getEmployeeID }) => {
                 </td>
               </tr>
             );
-          })}
+          })
+          : filterTable.map((doc, index) => {
+            return (
+              <tr key={doc.id}>
+                <td className={`${styles.ALtd}`}>{index + 1}</td>
+                <td className={`${styles.ALtd}`}>{doc.firstName}</td>
+                <td className={`${styles.ALtd}`}>{doc.lastName}</td>
+                <td className={`${styles.ALtd}`}>{doc.cityName}</td>
+                <td className={`${styles.ALtd}`}>{doc.position}</td>
+                <td className={`${styles.ALtd}`}>{doc.salary}</td>
+                <td className={`${styles.ALtd}`}>{doc.mNumber}</td>
+                <td>
+                  <button className={`${styles.ALbtn}`}>
+                    <Link to={`employeeUpdate/${doc.id}`}>Edit</Link>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    className={`${styles.ALbtn}`}
+                    onClick={(e) => deleteHandler(doc.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            );
+          })
+          }
+          
+    
         </tbody>
       </table>
 
       <div></div>
+      <div class="flex justify-center ...">
+    <button className={`${styles.ALbtn}`} onClick={navigateEmployeeReport}>
+      Employee Report
+    </button>
+  </div>
     </div>
+    
   );
 };
 
