@@ -6,7 +6,7 @@ import styles from "../Styles/styles";
 import Helmet from "../components/Helmet/Helmet";
 import { useLocation } from "react-router-dom";
 
-const Mytickets = ({}) => {
+const View = ({}) => {
   const [ticket, setTicket] = useState([]);
   const [reply, setReply] = useState([]);
   const [message, setMessage] = useState({ error: false, msg: "" });
@@ -89,35 +89,8 @@ const Mytickets = ({}) => {
                 href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
                 rel="stylesheet"
               ></link>
-              <h5 className="mb-30 padding-top-1x" style={{ color: "white" }}>
-                Reply to the ticket
-              </h5>
-              <form onSubmit={handleSubmit} className='text-black' >
-               
-                <div className="form-group">
-                  <textarea
-                    rows="7"
-                    cols="180"
-                    style={{ resize: "both" }}
-                    className="form-control form-control-rounded"
-                    name="reply"
-                    id="reply"
-                    Value={reply}
-                    onSelect={(e) => {
-                      setReply([e.target.value]);
-                    }}
-                    required
-                  ></textarea>
-                </div>
-                <div className="text-right">
-                  <button
-                    type="submit"
-                    className={`${styles.ALbtn} font-semibold`}
-                  >
-                    Reply
-                  </button>
-                </div>
-              </form>
+            
+             
             </Helmet>
           </div>
         </div>
@@ -126,4 +99,4 @@ const Mytickets = ({}) => {
   );
 };
 
-export default Mytickets;
+export default View;

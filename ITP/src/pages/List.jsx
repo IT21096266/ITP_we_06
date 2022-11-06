@@ -1,5 +1,5 @@
 import React, { useEffect, useState, ReactDOM ,useRef } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate,Link } from "react-router-dom";
 import TicketDataService from "../services/ticket.services";
 import styles from "../Styles/styles";
 import Helmet from "../components/Helmet/Helmet";
@@ -7,7 +7,7 @@ import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
 
 
 
-const Mytickets = ({}) => {
+const List = ({}) => {
   const [ticket, setTicket] = useState([]);
   const [message, setMessage] = useState({ error: false, msg: "" });
   const [filterTable, setTablefilter] = useState([]);
@@ -24,12 +24,7 @@ const Mytickets = ({}) => {
     setTicket(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
-   //REPORT GENARATING PURPOSE
-   const handleExportWithComponent = (e) => {
-    pdfExportComponent.current.save();
-  
-  };
-  const pdfExportComponent = useRef(null);
+   
   
 
 
@@ -39,7 +34,7 @@ const Mytickets = ({}) => {
   };
 
   const Admin = (ticket) => {
-    navigate('Adminticket',{ state: ticket });
+    navigate('/View',{ state: ticket });
     };
 
   const filterData = (e) => {
@@ -63,7 +58,7 @@ const Mytickets = ({}) => {
         <div className={` ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <Helmet title="Mytickets">
-            <PDFExport className={`${styles.ALtable}`} ref={pdfExportComponent} paperSize="A1">
+          
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1">
@@ -100,12 +95,7 @@ const Mytickets = ({}) => {
                             </button>
 
                            
-                            <button
-                              className={`${styles.ALbtn} font-semibold`}
-                              onClick={handleExportWithComponent}
-                            >
-                              Export to PDF with method
-                            </button>
+                           
                         
                     <table className={`${styles.ALtable}`}>
                       <thead className={`${styles.ALthread}`}>
@@ -149,6 +139,13 @@ const Mytickets = ({}) => {
                                     <td className={`${styles.ALtd}`}>
                                       {doc.issueDate}
                                     </td>
+                                    <td>
+                                <button className={`${styles.ALbtn}`}>
+                                  <Link to={`TicketUpdate/${doc.id}`}>
+                                    Edit
+                                  </Link>
+                                </button>
+                              </td>
                                   </tr>
                                 );
                               })}
@@ -159,7 +156,7 @@ const Mytickets = ({}) => {
                   </div>
                 </div>
               </section>
-              </PDFExport>
+            
             </Helmet>
              
           </div>
@@ -171,4 +168,4 @@ const Mytickets = ({}) => {
     </div>
   );
 };
-export default Mytickets;
+export default List;

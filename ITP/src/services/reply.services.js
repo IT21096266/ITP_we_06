@@ -17,7 +17,7 @@ class ReplyDataService{
     }
 
     getReply = (id) =>{
-        const reply = doc(firestore, "Reply", id)
+        const reply = doc(firestore, "Ticket", id)
         return getDoc(reply)
     }
 
