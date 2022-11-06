@@ -126,12 +126,21 @@ const Navbar = () => {
                                   </p>
                               </Link>
                               )}
-        {/* For Stock */}
+        {/* For Supplier */}
                             {users && users.email === "it21008528@my.sliit.lk" && (
-                              <Link to="/employeeList">
+                              <Link to="/supplierList">
                                   <p onClick={() => setIsMenu(false)}
                                   className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
-                                    Employee Management <MdAdd />
+                                    Supplier Management <MdAdd />
+                                  </p>
+                              </Link>
+                              )}
+
+                              {users && users.email === "it21015144@my.sliit.lk" && (
+                              <Link to="/Mytickets">
+                                  <p onClick={() => setIsMenu(false)}
+                                  className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
+                                    Ticket Management <MdAdd />
                                   </p>
                               </Link>
                               )}
@@ -143,7 +152,7 @@ const Navbar = () => {
                               </p>
                             </Link>
 
-                            <Link to="/Mytickets">
+                            <Link to="/List">
                               <p onClick={() => setIsMenu(false)}
                               className='px-4 py-2 flex items-center gap-1 cursor-pointer hover: text-dimWhite transition-all duration-100 ease-in-out'>
                                 View Tickets
