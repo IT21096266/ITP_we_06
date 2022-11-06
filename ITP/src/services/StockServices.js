@@ -24,7 +24,7 @@ class StockDataService{
     };
 
     getStock = (id) => {
-        const stockDoc = doc(db, "stocks",id);
+        const stockDoc = doc(firestore, "stocks",id);
         return getDoc(stockDoc);
     };
 }

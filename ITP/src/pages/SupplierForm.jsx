@@ -184,6 +184,9 @@ const Supplierform = () => {
                             >
                               Save
                             </button>
+                            <button className={`${styles.ALbtn} font-semibold`} onClick={navigateSupplierList} >
+                              Go To List
+                            </button>
                           </div>
                         </div>
                       </div>
