@@ -12,7 +12,7 @@ const TicketUpdate = () => {
     const [lastName, setLastName] = useState("");
     const [mNumber, setMnumber] = useState("");
     const [inquiry, setinquiry] = useState("");
-    const [subject, setsubject] = useState();
+    const [subject, setsubject] = useState("");
     const [description, setdescription] = useState("");
     const [message, setMessage] = useState({ error: false, msg: "" });
      const navigate = useNavigate();
@@ -28,7 +28,7 @@ const TicketUpdate = () => {
         subject,
         description,
     };
-
+    console.log(newTicket);
     try {
       if (ticketID !== undefined && ticketID !== "") {
         await TicketDataService.updateTicket(ticketID, newTicket);
@@ -98,7 +98,7 @@ const TicketUpdate = () => {
                             Please complete this form and one of our agents will
                             reply to you as soon as possible.
                           </p>
-                          us:{" "}
+                         
                         </div>
                       </div>
 
@@ -197,12 +197,7 @@ const TicketUpdate = () => {
                                   required
                                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-indigo-500 sm:text-sm"
                                 >
-                                  <option
-                                    disabled="disabled"
-                                    selected="selected"
-                                  >
-                                    Select an option
-                                  </option>
+                              
                                   <option>
                                     I have a concern about an Item purchased
                                   </option>
@@ -253,18 +248,18 @@ const TicketUpdate = () => {
                           </div>
                           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                             <div class="text-right grid grid-cols-7 gap-4 content-center ...">
-                              <button
-                                type="reset"
-                                className={`${styles.ALbtn} font-semibold `}
-                              >
-                                Reset
-                              </button>
-                              <button
-                                type="submit"
-                                className={`${styles.ALbtn} font-semibold`}
-                              >
-                                Submit
-                              </button>
+                            <button
+                              type="reset"
+                              className={`${styles.ALbtn} font-semibold `}
+                            >
+                              Reset
+                            </button>
+                            <button
+                              type="submit"
+                              className={`${styles.ALbtn} font-semibold `}
+                            >
+                              Update
+                            </button>
                             </div>
                           </div>
                         </div>

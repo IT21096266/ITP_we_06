@@ -39,7 +39,7 @@ const Mytickets = ({}) => {
   };
 
   const Admin = (ticket) => {
-    navigate('Adminticket',{ state: ticket });
+    navigate('/Adminticket',{ state: ticket });
     };
 
   const filterData = (e) => {
@@ -92,13 +92,7 @@ const Mytickets = ({}) => {
                 >
                   <div class="overflow-x-auto relative">
                  
-                     <button  
-                              className={`${styles.ADbtn} font-semibold`}
-                              onClick={navigateTicketForm}
-                            >
-                              Add New Ticket
-                            </button>
-
+                     
                            
                             <button
                               className={`${styles.ALbtn} font-semibold`}
