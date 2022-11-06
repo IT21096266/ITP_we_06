@@ -101,7 +101,7 @@ const StockUpdateForm = () => {
               name="floating_product_name"
               id="floating_product_name"
               placeholder=" "
-              required=""
+              required
               defaultValue={product}
               onSelect={(e) => {
                 setProduct(e.target.value);
@@ -121,7 +121,7 @@ const StockUpdateForm = () => {
               name="floating_brand_name"
               id="floating_brand_name"
               placeholder=" "
-              required=""
+              required
               defaultValue={brand}
               onSelect={(e) => {
                 setBrand(e.target.value);
@@ -141,7 +141,7 @@ const StockUpdateForm = () => {
               name="floating_supplier_name"
               id="floating_supplier_name"
               placeholder=" "
-              required=""
+              required
               defaultValue={supplier}
               onSelect={(e) => {
                 setSupplier(e.target.value);
@@ -182,7 +182,7 @@ const StockUpdateForm = () => {
               name="floating_quantity"
               id="floating_quantity"
               placeholder=" "
-              required=""
+              required
               defaultValue={quantity}
               onChange={(e) => {
                 setQuantity(e.target.value);
@@ -202,7 +202,7 @@ const StockUpdateForm = () => {
               name="floating_unit_price"
               id="floating_unit_price"
               placeholder=" "
-              required=""
+              required
               defaultValue={price}
               onChange={(e) => {
                 setPrice(e.target.value);
