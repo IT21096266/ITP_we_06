@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 
 import { AddressForm, AddressList, AddressUpdateForm, Home, LoginPage, SignUpPage, CreateContainer, SpearParts,  OnlineItemList, 
           SupplierForm, SupplierList, SupplierUpdate, StockList, StockForm, StockUpdateForm, StockSearch, Mytickets, StockReport, 
-          Adminticket, TicketForm, EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary,EmployeeReport,EmployeeImageAdd, SupplierReport} from '../../pages'
+          Adminticket, TicketForm, EmployeeForm,EmployeeList,EmployeeUpdate,EmployeeSalary,EmployeeReport,EmployeeImageAdd, SupplierReport, 
+          List,TicketUpdate,View} from '../../pages'
           
-
 import { MainContainer } from '../index'
 
 const AppRoutes = () => {
@@ -25,6 +25,12 @@ const AppRoutes = () => {
           <Route path="/Mytickets" element={<Mytickets />} />
           <Route path="/Adminticket" element={<Adminticket />} />
           <Route path="/TicketForm" element={<TicketForm />} />
+          <Route path="/List" element={<List />} />
+          <Route path="/View" element={<View />} />
+          <Route path="/TicketUpdate" element={<ticketUpdate/>} />
+          <Route path="addressList/addressUpdate/:addressID" element={<AddressUpdateForm  />} />
+          <Route path="List/TicketUpdate/:ticketID" element={<TicketUpdate  />} />
+
           <Route path="/employee" element={<EmployeeForm />} />
           <Route path="/employeeList" element={<EmployeeList  />} />
           <Route path="/employeeUpdate" element={<EmployeeUpdate  />} />
