@@ -8,6 +8,7 @@ class TicketDataService{
 
     addTicket = (newTicket) =>{
         return addDoc(TicketCollectionRef, newTicket)
+        
     }
 
 
@@ -19,6 +20,13 @@ class TicketDataService{
         const ticket = doc(firestore, "Ticket", id)
         return getDoc(ticket)
     }
+
+    updateTicket = (id, updateTicket) =>{
+        const ticket = doc(firestore, "Ticket", id)
+        return updateDoc(ticket, updateTicket)
+    }
+
+    
 
 }
 
