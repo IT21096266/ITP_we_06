@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate,useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ReplyDataService from "../services/reply.services";
 import TicketDataService from "../services/ticket.services";
 import styles from "../Styles/styles";
@@ -11,23 +11,21 @@ const Mytickets = ({}) => {
   const [reply, setReply] = useState([]);
   const [message, setMessage] = useState({ error: false, msg: "" });
 
-  const navigate = useNavigate(); 
-  const {state} = useLocation();     
-    console.log(state)      // Navigate// Navigate
-  
+  const navigate = useNavigate();
+  const { state } = useLocation();
+  console.log(state); // Navigate// Navigate
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newReply = {
-     reply,
+      reply,
     };
-   
+
     try {
-    
       await ReplyDataService.addReply(newReply);
       alert("Reply added successfully!");
       navigate("/Mytickets");
-    
-  } catch (err) {
+    } catch (err) {
       alert("Reply not added successfully!");
       setMessage({ error: false, msg: err.message });
     }
@@ -65,12 +63,13 @@ const Mytickets = ({}) => {
             <Helmet title="Mytickets">
               <div className="comment text-black">
                 <div className="comment-body">
-                        
-                <><div className="comment-text" >{state.firstName}</div><div className="comment-text">{state.description}</div></>
-                                       
+                  <>
+                    <div className="comment-text">{state.firstName}</div>
+                    <div className="comment-text">{state.description}</div>
+                  </>
                 </div>
               </div>
-            
+
               <div className="comment text-black">
                 <div className="comment-body">
                   {reply.map((doc) => {
@@ -92,8 +91,7 @@ const Mytickets = ({}) => {
               <h5 className="mb-30 padding-top-1x" style={{ color: "white" }}>
                 Reply to the ticket
               </h5>
-              <form onSubmit={handleSubmit} className='text-black' >
-               
+              <form onSubmit={handleSubmit} className="text-black">
                 <div className="form-group">
                   <textarea
                     rows="7"

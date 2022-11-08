@@ -222,16 +222,15 @@ const EmployeeForm = () => {
                   </div>
                 </div>
                 <br />
-              <br />
+                <br />
                 <div class="flex justify-center ...">
-                <button
-                  className={`${styles.ALbtn}`}
-                  onClick={navigateEmployeeImageAdd}
-                >
-                  Add Employee Images
-                </button>
-
-              </div>
+                  <button
+                    className={`${styles.ALbtn}`}
+                    onClick={navigateEmployeeImageAdd}
+                  >
+                    Add Employee Images
+                  </button>
+                </div>
               </div>
             </Helmet>
           </div>

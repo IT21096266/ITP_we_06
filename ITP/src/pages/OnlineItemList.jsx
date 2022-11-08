@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef  } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { NavLink, useNavigate, Link } from "react-router-dom";
 import OnlineItemService from "../services/onlineItem.services";
 import styles from "../Styles/styles";
@@ -32,11 +32,11 @@ const OnlineItemList = () => {
     navigate("/createItem");
   };
 
-//  // Generate Report
- const handleExportWithComponent = (e) => {
+  //  // Generate Report
+  const handleExportWithComponent = (e) => {
     pdfExportComponent.current.save();
-    };
- const pdfExportComponent = useRef(null);
+  };
+  const pdfExportComponent = useRef(null);
 
   return (
     <div className="bg-primary w-full overflow-hidden">
@@ -46,70 +46,86 @@ const OnlineItemList = () => {
             <Helmet title="Address List">
               <section
                 id="AddressList"
-                className={`flex md:flex-row flex-col ${styles.paddingY}`}>
+                className={`flex md:flex-row flex-col ${styles.paddingY}`}
+              >
                 <div
-                  className={`flex-1 ${styles.flexStart} flex-col xl:px-0 shadow-box-shadow sm:px-16 px-6 bg-box-gradient rounded-md`}>
+                  className={`flex-1 ${styles.flexStart} flex-col xl:px-0 shadow-box-shadow sm:px-16 px-6 bg-box-gradient rounded-md`}
+                >
                   <div className="overflow-x-auto relative ">
-                        <button className={`${styles.ALbtn} font-semibold mt-5`}
-                                onClick={navigateOnlineItemForm}>
-                            Add New Item
-                        </button>
-                        <button className= {`${styles.ALbtn} font-semibold mt-5 ml-4`}
-                                onClick={handleExportWithComponent}>
-                            Download Report
-                        </button>
+                    <button
+                      className={`${styles.ALbtn} font-semibold mt-5`}
+                      onClick={navigateOnlineItemForm}
+                    >
+                      Add New Item
+                    </button>
+                    <button
+                      className={`${styles.ALbtn} font-semibold mt-5 ml-4`}
+                      onClick={handleExportWithComponent}
+                    >
+                      Download Report
+                    </button>
                     <PDFExport ref={pdfExportComponent} paperSize="A1">
-                    <div className="bg-box-gradient">
+                      <div className="bg-box-gradient">
                         <table className={`${styles.ALtable} mt-6`}>
-                        <thead className={`${styles.ALthread}`}>
+                          <thead className={`${styles.ALthread}`}>
                             <tr>
-                            <th scope="col" className={`${styles.ALth}`}>
+                              <th scope="col" className={`${styles.ALth}`}>
                                 No
-                            </th>
-                            <th scope="col" className={`${styles.ALth}`}>Brand</th>
-                            <th scope="col" className={`${styles.ALth}`}>Category</th>
-                            <th scope="col" className={`${styles.ALth}`}>Quantity</th>
-                            <th scope="col" className={`${styles.ALth}`}>Price</th>
+                              </th>
+                              <th scope="col" className={`${styles.ALth}`}>
+                                Brand
+                              </th>
+                              <th scope="col" className={`${styles.ALth}`}>
+                                Category
+                              </th>
+                              <th scope="col" className={`${styles.ALth}`}>
+                                Quantity
+                              </th>
+                              <th scope="col" className={`${styles.ALth}`}>
+                                Price
+                              </th>
                             </tr>
-                        </thead>
-                        <tbody>
+                          </thead>
+                          <tbody>
                             {onlineItem.map((doc, index) => {
-                            return (
+                              return (
                                 <tr key={doc.id}>
-                                <td className={`${styles.ALtd}`}>{index + 1}</td>
-                                <td className={`${styles.ALtd}`}>
+                                  <td className={`${styles.ALtd}`}>
+                                    {index + 1}
+                                  </td>
+                                  <td className={`${styles.ALtd}`}>
                                     {doc.brand}
-                                </td>
-                                <td className={`${styles.ALtd}`}>
+                                  </td>
+                                  <td className={`${styles.ALtd}`}>
                                     {doc.category}
-                                </td>
-                                <td className={`${styles.ALtd}`}>
+                                  </td>
+                                  <td className={`${styles.ALtd}`}>
                                     {doc.quantity}
-                                </td>
-                                <td className={`${styles.ALtd}`}>
+                                  </td>
+                                  <td className={`${styles.ALtd}`}>
                                     {doc.price}
-                                </td>
-                                <td>
+                                  </td>
+                                  <td>
                                     <button className={`${styles.ALbtn}`}>
-                                    <Link to={`addressUpdate/${doc.id}`}>
+                                      <Link to={`addressUpdate/${doc.id}`}>
                                         Edit
-                                    </Link>
+                                      </Link>
                                     </button>
-                                </td>
-                                <td>
+                                  </td>
+                                  <td>
                                     <button
-                                    className={`${styles.ALbtn}`}
-                                    onClick={(e) => deleteHandler(doc.id)}
+                                      className={`${styles.ALbtn}`}
+                                      onClick={(e) => deleteHandler(doc.id)}
                                     >
-                                    Delete
+                                      Delete
                                     </button>
-                                </td>
+                                  </td>
                                 </tr>
-                            );
+                              );
                             })}
-                        </tbody>
+                          </tbody>
                         </table>
-                    </div>
+                      </div>
                     </PDFExport>
                   </div>
                 </div>

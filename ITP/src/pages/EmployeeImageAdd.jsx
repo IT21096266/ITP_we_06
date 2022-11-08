@@ -19,16 +19,14 @@ import { useStateValue } from "../context/StateProvider";
 import { NavLink, useNavigate, Link } from "react-router-dom";
 
 const EmployeeImageAdd = () => {
-  const[name,setName]=useState("");
-  
+  const [name, setName] = useState("");
+
   const [imageAsset, setImageAsset] = useState(null);
   const [fields, setFields] = useState(false);
   const [msg, setMsg] = useState(null);
   const [alertStatus, setAlertStatus] = useState("danger");
   const [isLoading, setLoading] = useState(false);
   const [{ onlineItems }, dispatch] = useStateValue();
-  
-
 
   const navigate = useNavigate(); // Navigate
 
@@ -91,11 +89,7 @@ const EmployeeImageAdd = () => {
   const saveDetails = () => {
     setLoading(true);
     try {
-      if (
-       
-        !name ||
-        !imageAsset
-      ) {
+      if (!name || !imageAsset) {
         setFields(true);
         setMsg("Required fields cannot be Empty : Try Again");
         setAlertStatus("danger");
@@ -106,8 +100,8 @@ const EmployeeImageAdd = () => {
       } else {
         const data = {
           id: `${Date.now()}`,
-          
-          name:name,
+
+          name: name,
           imageURL: imageAsset,
         };
         saveItem(data);
@@ -134,7 +128,6 @@ const EmployeeImageAdd = () => {
   };
 
   const clearData = () => {
-    
     setName("");
     setImageAsset(null);
   };
@@ -147,24 +140,22 @@ const EmployeeImageAdd = () => {
       });
     });
   };
-  
 
   return (
-
-    
     <div className="bg-primary w-full overflow-hidden">
       <main className="mt-1 p-12 w-full ">
         <div className={` ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <Helmet title="EmployeeImage">
-
-           
-      <div class="flex justify-center ...">
-        <button className={`${styles.ALbtn}`} onClick={navigateEmployee}>
-          Add New Employee
-        </button>
-      </div>
-      <br></br>
+              <div class="flex justify-center ...">
+                <button
+                  className={`${styles.ALbtn}`}
+                  onClick={navigateEmployee}
+                >
+                  Add New Employee
+                </button>
+              </div>
+              <br></br>
               {/*-------------- Messages -------------*/}
               {fields && (
                 <motion.p
@@ -190,14 +181,6 @@ const EmployeeImageAdd = () => {
                   </h1>
                 </div>
 
-                
-
-                
-
-                
-
-
-
                 <div className="mt-4 w-full flex flex-col md:flex-row items-center">
                   <div className="w-full py-2 flex items-center gap-2">
                     <label className="block text-lg font-medium text-gray-300 ">
@@ -211,7 +194,6 @@ const EmployeeImageAdd = () => {
                       className="ml-5 w-[900px] h-[100px] text-lg bg-transparent font-semibold placeholder:text-gray-800
                                     form-control block px-3 py-1.5 border border-solid border-gray-300 rounded-md resize-none"
                     ></textarea>
-                   
                   </div>
                 </div>
 

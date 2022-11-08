@@ -1,10 +1,10 @@
 import React from "react";
 
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import { Container } from "reactstrap";
 import { Link } from "react-router-dom";
 
-import '../../Styles/hero-slider.css';
+import "../../Styles/hero-slider.css";
 
 const HeroSlider = () => {
   const settings = {
@@ -23,10 +23,8 @@ const HeroSlider = () => {
         <Container>
           <div className={`text-white slider__content`}>
             <h3 className="flex-1 font-bold ss:text-[72px] ss:leading-[75px]">
-              The Next  <br className="sm:block hidden"/> {" "}
-              <span className="text-gradient">
-              Generation
-              </span> {" "}<br/>
+              The Next <br className="sm:block hidden" />{" "}
+              <span className="text-gradient">Generation</span> <br />
               Services 011
             </h3>
 
@@ -38,13 +36,11 @@ const HeroSlider = () => {
       </div>
 
       <div className="slider__item slider__item-02 mt0">
-      <Container>
+        <Container>
           <div className={`text-white slider__content`}>
             <h3 className="flex-1 font-bold ss:text-[72px] ss:leading-[75px]">
-              The Next  <br className="sm:block hidden"/> {" "}
-              <span className="text-gradient">
-              Generation
-              </span> {" "}<br/>
+              The Next <br className="sm:block hidden" />{" "}
+              <span className="text-gradient">Generation</span> <br />
               Services
             </h3>
 
@@ -56,13 +52,11 @@ const HeroSlider = () => {
       </div>
 
       <div className="slider__item slider__item-03 mt0">
-      <Container>
+        <Container>
           <div className={`text-white slider__content`}>
             <h3 className="flex-1 font-bold ss:text-[72px] ss:leading-[75px]">
-              The Next  <br className="sm:block hidden"/> {" "}
-              <span className="text-gradient">
-              Generation
-              </span> {" "}<br/>
+              The Next <br className="sm:block hidden" />{" "}
+              <span className="text-gradient">Generation</span> <br />
               Services
             </h3>
 
@@ -74,13 +68,11 @@ const HeroSlider = () => {
       </div>
 
       <div className="slider__item slider__item-04 mt0">
-      <Container>
+        <Container>
           <div className={`text-white slider__content`}>
             <h3 className="flex-1 font-bold ss:text-[72px] ss:leading-[75px]">
-              The Next  <br className="sm:block hidden"/> {" "}
-              <span className="text-gradient">
-              Generation
-              </span> {" "}<br/>
+              The Next <br className="sm:block hidden" />{" "}
+              <span className="text-gradient">Generation</span> <br />
               Services
             </h3>
 

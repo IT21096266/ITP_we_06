@@ -27,11 +27,11 @@ const SupplierList = ({ getSupplierId }) => {
   const navigateSupplierForm = () => {
     navigate("/supplierForm");
   };
-//NAVIGATE TO SUPPLIER Report
-  const navigateReport = () =>{
+  //NAVIGATE TO SUPPLIER Report
+  const navigateReport = () => {
     navigate("/supplierReport");
-  }
- 
+  };
+
   return (
     <Helmet title="Supplier List">
       <section
@@ -49,10 +49,7 @@ const SupplierList = ({ getSupplierId }) => {
               Add New Supplier
             </button>
 
-            <button
-              className={`${styles.ALbtn}`}
-              onClick={navigateReport}
-            >
+            <button className={`${styles.ALbtn}`} onClick={navigateReport}>
               Genarate A Report
             </button>
 

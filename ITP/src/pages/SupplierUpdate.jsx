@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import styles from "../Styles/styles";
 import { useNavigate, useParams } from "react-router-dom";
-import SupplierDataService from '../services/supplier.services'
+import SupplierDataService from "../services/supplier.services";
 
 const SupplierUpdate = () => {
   const [sName, setsName] = useState("");
@@ -215,7 +215,10 @@ const SupplierUpdate = () => {
                             >
                               Save
                             </button>
-                            <button className={`${styles.ALbtn} font-semibold`} onClick={navigateSupplierList} >
+                            <button
+                              className={`${styles.ALbtn} font-semibold`}
+                              onClick={navigateSupplierList}
+                            >
                               Go To List
                             </button>
                           </div>

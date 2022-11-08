@@ -1,34 +1,39 @@
-import { firestore } from './firebase-config'
-import { collection, getDoc, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore'
+import { firestore } from "./firebase-config";
+import {
+  collection,
+  getDoc,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 
+const employeeCollectionRef = collection(firestore, "employee");
 
-const employeeCollectionRef = collection(firestore, "employee")
+class EmployeeDataService {
+  addEmployee = (newEmployee) => {
+    return addDoc(employeeCollectionRef, newEmployee);
+  };
 
-class EmployeeDataService{
+  updateEmployee = (EmployeeID, updateEmployee) => {
+    const employee = doc(firestore, "employee", EmployeeID);
+    return updateDoc(employee, updateEmployee);
+  };
 
-    addEmployee = (newEmployee) =>{
-        return addDoc(employeeCollectionRef, newEmployee)
-    }
+  deleteEmployee = (EmployeeID) => {
+    const employee = doc(firestore, "employee", EmployeeID);
+    return deleteDoc(employee);
+  };
 
-    updateEmployee = (EmployeeID, updateEmployee) =>{
-        const employee = doc(firestore, "employee", EmployeeID)
-        return updateDoc(employee, updateEmployee)
-    }
+  getAllEmployee = () => {
+    return getDocs(employeeCollectionRef);
+  };
 
-    deleteEmployee = (EmployeeID) => {
-        const employee = doc(firestore, "employee", EmployeeID)
-        return deleteDoc(employee)
-    }
-
-    getAllEmployee = () =>{
-        return getDocs(employeeCollectionRef)
-    }
-
-    getEmployee = (EmployeeID) =>{
-        const employee = doc(firestore, "employee", EmployeeID)
-        return getDoc(employee)
-    }
-
+  getEmployee = (EmployeeID) => {
+    const employee = doc(firestore, "employee", EmployeeID);
+    return getDoc(employee);
+  };
 }
 
-export default new EmployeeDataService()
+export default new EmployeeDataService();

@@ -1,11 +1,9 @@
-import React, { useEffect, useState, ReactDOM ,useRef } from "react";
+import React, { useEffect, useState, ReactDOM, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import TicketDataService from "../services/ticket.services";
 import styles from "../Styles/styles";
 import Helmet from "../components/Helmet/Helmet";
 import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
-
-
 
 const Mytickets = ({}) => {
   const [ticket, setTicket] = useState([]);
@@ -24,14 +22,11 @@ const Mytickets = ({}) => {
     setTicket(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
-   //REPORT GENARATING PURPOSE
-   const handleExportWithComponent = (e) => {
+  //REPORT GENARATING PURPOSE
+  const handleExportWithComponent = (e) => {
     pdfExportComponent.current.save();
-  
   };
   const pdfExportComponent = useRef(null);
-  
-
 
   // navigate to /contacts
   const navigateTicketForm = () => {
@@ -39,8 +34,8 @@ const Mytickets = ({}) => {
   };
 
   const Admin = (ticket) => {
-    navigate('/Adminticket',{ state: ticket });
-    };
+    navigate("/Adminticket", { state: ticket });
+  };
 
   const filterData = (e) => {
     if (e.target.value != "") {
@@ -63,55 +58,52 @@ const Mytickets = ({}) => {
         <div className={` ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <Helmet title="Mytickets">
-            <PDFExport className={`${styles.ALtable}`} ref={pdfExportComponent} paperSize="A1">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">
-                   
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  color="black"
-                  class="form-control"
-                  placeholder="Search"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  value={value}
-                     className={`${styles.ADtxt}`}
-                  onChange={filterData}
-                />
-              </div>
-
-              <section
-                id="Mytickets"
-                className={`flex md:flex-row flex-col ${styles.paddingY}`}
+              <PDFExport
+                className={`${styles.ALtable}`}
+                ref={pdfExportComponent}
+                paperSize="A1"
               >
-                <div
-                  className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 SL-bg-table rounded-md SL-log`}
-                >
-                  <div class="overflow-x-auto relative">
-                 
-                     
-                           
-                            <button
-                              className={`${styles.ALbtn} font-semibold`}
-                              onClick={handleExportWithComponent}
-                            >
-                              Export to PDF with method
-                            </button>
-                        
-                    <table className={`${styles.ALtable}`}>
-                      <thead className={`${styles.ALthread}`}>
-                        <tr>
-                         
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"></span>
+                  </div>
+                  <input
+                    type="text"
+                    color="black"
+                    class="form-control"
+                    placeholder="Search"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                    value={value}
+                    className={`${styles.ADtxt}`}
+                    onChange={filterData}
+                  />
+                </div>
 
-                          <th scope="col" className={`${styles.ALth}`}></th>
-                          <th scope="col" className={`${styles.ALth}`}></th>
-                          <th scope="col" className={`${styles.ALth}`}></th>
-                        </tr>
-                      </thead>
-                    
+                <section
+                  id="Mytickets"
+                  className={`flex md:flex-row flex-col ${styles.paddingY}`}
+                >
+                  <div
+                    className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 SL-bg-table rounded-md SL-log`}
+                  >
+                    <div class="overflow-x-auto relative">
+                      <button
+                        className={`${styles.ALbtn} font-semibold`}
+                        onClick={handleExportWithComponent}
+                      >
+                        Export to PDF with method
+                      </button>
+
+                      <table className={`${styles.ALtable}`}>
+                        <thead className={`${styles.ALthread}`}>
+                          <tr>
+                            <th scope="col" className={`${styles.ALth}`}></th>
+                            <th scope="col" className={`${styles.ALth}`}></th>
+                            <th scope="col" className={`${styles.ALth}`}></th>
+                          </tr>
+                        </thead>
+
                         <tbody>
                           {value.length > 0
                             ? filterTable.map((doc, index) => {
@@ -119,7 +111,9 @@ const Mytickets = ({}) => {
                                   <tr key={doc.id}>
                                     <td className={`${styles.ALtd}`}>
                                       {" "}
-                                      <button onClick={()=>Admin(doc)}>{index + 1}</button>
+                                      <button onClick={() => Admin(doc)}>
+                                        {index + 1}
+                                      </button>
                                     </td>
                                     <td className={`${styles.ALtd}`}>
                                       {doc.subject}
@@ -135,7 +129,9 @@ const Mytickets = ({}) => {
                                   <tr key={doc.id}>
                                     <td className={`${styles.ALtd}`}>
                                       {" "}
-                                     <button onClick={()=>Admin(doc)}>{index + 1}</button>
+                                      <button onClick={() => Admin(doc)}>
+                                        {index + 1}
+                                      </button>
                                     </td>
                                     <td className={`${styles.ALtd}`}>
                                       {doc.subject}
@@ -147,12 +143,10 @@ const Mytickets = ({}) => {
                                 );
                               })}
                         </tbody>
-                 
-                    </table>
-                   
+                      </table>
+                    </div>
                   </div>
-                </div>
-              </section>
+                </section>
               </PDFExport>
             </Helmet>
              

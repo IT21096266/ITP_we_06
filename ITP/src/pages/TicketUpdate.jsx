@@ -7,26 +7,26 @@ import styles from "../Styles/styles";
 import Helmet from "../components/Helmet/Helmet";
 
 const TicketUpdate = () => {
-    const [issueDate, setissueDate] = useState([]);
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [mNumber, setMnumber] = useState("");
-    const [inquiry, setinquiry] = useState("");
-    const [subject, setsubject] = useState("");
-    const [description, setdescription] = useState("");
-    const [message, setMessage] = useState({ error: false, msg: "" });
-     const navigate = useNavigate();
+  const [issueDate, setissueDate] = useState([]);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [mNumber, setMnumber] = useState("");
+  const [inquiry, setinquiry] = useState("");
+  const [subject, setsubject] = useState("");
+  const [description, setdescription] = useState("");
+  const [message, setMessage] = useState({ error: false, msg: "" });
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newTicket = {
-        issueDate,
-        firstName,
-        lastName,
-        mNumber,
-        inquiry,
-        subject,
-        description,
+      issueDate,
+      firstName,
+      lastName,
+      mNumber,
+      inquiry,
+      subject,
+      description,
     };
     console.log(newTicket);
     try {
@@ -40,7 +40,6 @@ const TicketUpdate = () => {
     } catch (err) {
       setMessage({ error: false, msg: err.message });
     }
-  
   };
 
   // -----------------------------------------------------   Fetch data from firestore to update        -----------------------------------
@@ -54,7 +53,7 @@ const TicketUpdate = () => {
       console.log("Got the Data: ", docSnap.data());
       setissueDate(docSnap.data().issueDate);
       setFirstName(docSnap.data().firstName);
-      setLastName(docSnap.data().lastName);                   
+      setLastName(docSnap.data().lastName);
       setMnumber(docSnap.data().mNumber);
       setinquiry(docSnap.data().inquiry);
       setsubject(docSnap.data().subject);
@@ -98,7 +97,6 @@ const TicketUpdate = () => {
                             Please complete this form and one of our agents will
                             reply to you as soon as possible.
                           </p>
-                         
                         </div>
                       </div>
 
@@ -197,7 +195,6 @@ const TicketUpdate = () => {
                                   required
                                   class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-slate-500 focus:border-indigo-500 sm:text-sm"
                                 >
-                              
                                   <option>
                                     I have a concern about an Item purchased
                                   </option>
@@ -248,18 +245,18 @@ const TicketUpdate = () => {
                           </div>
                           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                             <div class="text-right grid grid-cols-7 gap-4 content-center ...">
-                            <button
-                              type="reset"
-                              className={`${styles.ALbtn} font-semibold `}
-                            >
-                              Reset
-                            </button>
-                            <button
-                              type="submit"
-                              className={`${styles.ALbtn} font-semibold `}
-                            >
-                              Update
-                            </button>
+                              <button
+                                type="reset"
+                                className={`${styles.ALbtn} font-semibold `}
+                              >
+                                Reset
+                              </button>
+                              <button
+                                type="submit"
+                                className={`${styles.ALbtn} font-semibold `}
+                              >
+                                Update
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -275,6 +272,5 @@ const TicketUpdate = () => {
     </div>
   );
 };
-
 
 export default TicketUpdate;

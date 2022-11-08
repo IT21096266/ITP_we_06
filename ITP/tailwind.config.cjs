@@ -50,7 +50,7 @@ module.exports = {
         secondary: "#00f6ff",
         dimWhite: "rgba(255, 255, 255, 0.7)",
         dimBlue: "rgba(9, 151, 124, 0.1)",
-        
+
         headingColor: "#2e2e2e",
         textColor: "#515151",
         cardOverlay: "rgba(256,256,256,0.4)",
@@ -63,7 +63,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar'),
-  ],
+  plugins: [require("tailwind-scrollbar")],
 };

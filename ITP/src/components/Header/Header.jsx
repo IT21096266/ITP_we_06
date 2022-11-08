@@ -1,13 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import styles from '../../Styles/styles'
+import styles from "../../Styles/styles";
 
 const Header = () => {
-  return (
-    <div className='bg-primary w-full overflow-hidden'>
+  return <div className="bg-primary w-full overflow-hidden"></div>;
+};
 
-    </div>
-  )
-}
-
-export default Header
+export default Header;

@@ -5,7 +5,6 @@ import Helmet from "../components/Helmet/Helmet";
 import img from "../assets/Employee/3.jpg";
 
 const EmployeeSalary = () => {
-  
   const navigate = useNavigate();
 
   const navigateEmployeeList = () => {
@@ -38,8 +37,7 @@ const EmployeeSalary = () => {
         <div className={`bg-primary ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <Helmet title="Employee Form">
-
-            <div class="flex justify-center ...">
+              <div class="flex justify-center ...">
                 <button
                   className={`${styles.ALbtn}`}
                   onClick={navigateEmployeeList}

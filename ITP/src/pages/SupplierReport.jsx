@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import styles from "../Styles/styles";
 import { useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
@@ -11,18 +11,18 @@ import "@progress/kendo-theme-default/dist/all.css";
 import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
 
 const SupplierReport = () => {
-    const [suppliers, setSuppliers] = useState([]);
+  const [suppliers, setSuppliers] = useState([]);
 
-    useEffect(() => {
-      getSuppliers();
-    }, []);
-  
-    const getSuppliers = async () => {
-      const data = await SupplierDataService.getAllSuppliers();
-      console.log(data.docs);
-      setSuppliers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    //REPORT GENARATING PURPOSE
+  useEffect(() => {
+    getSuppliers();
+  }, []);
+
+  const getSuppliers = async () => {
+    const data = await SupplierDataService.getAllSuppliers();
+    console.log(data.docs);
+    setSuppliers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
+  //REPORT GENARATING PURPOSE
   const handleExportWithComponent = (e) => {
     pdfExportComponent.current.save();
   };
@@ -30,12 +30,11 @@ const SupplierReport = () => {
 
   return (
     <div>
-        <PDFExport ref={pdfExportComponent} paperSize="A1">
+      <PDFExport ref={pdfExportComponent} paperSize="A1">
         <div
           className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 SL-bg-table rounded-md SL-log`}
         >
           <div>
-            
             <button
               className={`${styles.ADbtn}`}
               onClick={handleExportWithComponent}
@@ -75,7 +74,7 @@ const SupplierReport = () => {
         </div>
       </PDFExport>
     </div>
-  )
-}
+  );
+};
 
-export default SupplierReport
+export default SupplierReport;

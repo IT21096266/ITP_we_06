@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import styles from "../Styles/styles";
 import { useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
@@ -11,7 +11,7 @@ import "@progress/kendo-theme-default/dist/all.css";
 import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
 
 const StockReport = () => {
-    const [Stock, setStocks] = useState([]);
+  const [Stock, setStocks] = useState([]);
 
   useEffect(() => {
     getStock();
@@ -22,7 +22,7 @@ const StockReport = () => {
     console.log(data.docs);
     setStocks(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
-    //REPORT GENARATING PURPOSE
+  //REPORT GENARATING PURPOSE
   const handleExportWithComponent = (e) => {
     pdfExportComponent.current.save();
   };
@@ -30,12 +30,11 @@ const StockReport = () => {
 
   return (
     <div>
-        <PDFExport ref={pdfExportComponent} paperSize="A1">
+      <PDFExport ref={pdfExportComponent} paperSize="A1">
         <div
           className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 SL-bg-table rounded-md SL-log`}
         >
           <div>
-            
             <button
               className={`${styles.ADbtn}`}
               onClick={handleExportWithComponent}
@@ -69,7 +68,6 @@ const StockReport = () => {
                     <td className={`${styles.SLtd}`}>{doc.quantity}</td>
                     <td className={`${styles.SLtd}`}>{doc.price}</td>
                     <td className={`${styles.SLtd}`}>{doc.total} </td>
-                    
                   </tr>
                 );
               })}
@@ -78,7 +76,7 @@ const StockReport = () => {
         </div>
       </PDFExport>
     </div>
-  )
-}
+  );
+};
 
-export default StockReport
+export default StockReport;

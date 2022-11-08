@@ -59,7 +59,7 @@ const Supplierform = () => {
                   </div>
 
                   <div class="mt-5 md:mt-0 md:col-span-2">
-                    <form 
+                    <form
                       onSubmit={handleSubmit}
                       className="bg-discount-gradient text-black"
                     >
@@ -184,7 +184,10 @@ const Supplierform = () => {
                             >
                               Save
                             </button>
-                            <button className={`${styles.ALbtn} font-semibold`} onClick={navigateSupplierList} >
+                            <button
+                              className={`${styles.ALbtn} font-semibold`}
+                              onClick={navigateSupplierList}
+                            >
                               Go To List
                             </button>
                           </div>

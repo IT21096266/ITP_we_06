@@ -1,11 +1,9 @@
-import React, { useEffect, useState, ReactDOM ,useRef } from "react";
-import { NavLink, useNavigate,Link } from "react-router-dom";
+import React, { useEffect, useState, ReactDOM, useRef } from "react";
+import { NavLink, useNavigate, Link } from "react-router-dom";
 import TicketDataService from "../services/ticket.services";
 import styles from "../Styles/styles";
 import Helmet from "../components/Helmet/Helmet";
 import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
-
-
 
 const List = ({}) => {
   const [ticket, setTicket] = useState([]);
@@ -24,18 +22,14 @@ const List = ({}) => {
     setTicket(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
-   
-  
-
-
   // navigate to /contacts
   const navigateTicketForm = () => {
     navigate("/TicketForm");
   };
 
   const Admin = (ticket) => {
-    navigate('/View',{ state: ticket });
-    };
+    navigate("/View", { state: ticket });
+  };
 
   const filterData = (e) => {
     if (e.target.value != "") {
@@ -58,12 +52,9 @@ const List = ({}) => {
         <div className={` ${styles.flexStart}`}>
           <div className={`${styles.boxWidth}`}>
             <Helmet title="Mytickets">
-          
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">
-                   
-                  </span>
+                  <span class="input-group-text" id="basic-addon1"></span>
                 </div>
                 <input
                   type="text"
@@ -73,7 +64,7 @@ const List = ({}) => {
                   aria-label="Username"
                   aria-describedby="basic-addon1"
                   value={value}
-                     className={`${styles.ADtxt}`}
+                  className={`${styles.ADtxt}`}
                   onChange={filterData}
                 />
               </div>
@@ -86,77 +77,72 @@ const List = ({}) => {
                   className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6 SL-bg-table rounded-md SL-log`}
                 >
                   <div class="overflow-x-auto relative">
-                 
-                     <button  
-                              className={`${styles.ADbtn} font-semibold`}
-                              onClick={navigateTicketForm}
-                            >
-                              Add New Ticket
-                            </button>
+                    <button
+                      className={`${styles.ADbtn} font-semibold`}
+                      onClick={navigateTicketForm}
+                    >
+                      Add New Ticket
+                    </button>
 
-                           
-                           
-                        
                     <table className={`${styles.ALtable}`}>
                       <thead className={`${styles.ALthread}`}>
                         <tr>
-                         
-
                           <th scope="col" className={`${styles.ALth}`}></th>
                           <th scope="col" className={`${styles.ALth}`}></th>
                           <th scope="col" className={`${styles.ALth}`}></th>
                         </tr>
                       </thead>
-                    
-                        <tbody>
-                          {value.length > 0
-                            ? filterTable.map((doc, index) => {
-                                return (
-                                  <tr key={doc.id}>
-                                    <td className={`${styles.ALtd}`}>
-                                      {" "}
-                                      <button onClick={()=>Admin(doc)}>{index + 1}</button>
-                                    </td>
-                                    <td className={`${styles.ALtd}`}>
-                                      {doc.subject}
-                                    </td>
-                                    <td className={`${styles.ALtd}`}>
-                                      {doc.issueDate}
-                                    </td>
-                                  </tr>
-                                );
-                              })
-                            : ticket.map((doc, index) => {
-                                return (
-                                  <tr key={doc.id}>
-                                    <td className={`${styles.ALtd}`}>
-                                      {" "}
-                                     <button onClick={()=>Admin(doc)}>{index + 1}</button>
-                                    </td>
-                                    <td className={`${styles.ALtd}`}>
-                                      {doc.subject}
-                                    </td>
-                                    <td className={`${styles.ALtd}`}>
-                                      {doc.issueDate}
-                                    </td>
-                                    <td>
-                                <button className={`${styles.ALbtn}`}>
-                                  <Link to={`TicketUpdate/${doc.id}`}>
-                                    Edit
-                                  </Link>
-                                </button>
-                              </td>
-                                  </tr>
-                                );
-                              })}
-                        </tbody>
-                 
+
+                      <tbody>
+                        {value.length > 0
+                          ? filterTable.map((doc, index) => {
+                              return (
+                                <tr key={doc.id}>
+                                  <td className={`${styles.ALtd}`}>
+                                    {" "}
+                                    <button onClick={() => Admin(doc)}>
+                                      {index + 1}
+                                    </button>
+                                  </td>
+                                  <td className={`${styles.ALtd}`}>
+                                    {doc.subject}
+                                  </td>
+                                  <td className={`${styles.ALtd}`}>
+                                    {doc.issueDate}
+                                  </td>
+                                </tr>
+                              );
+                            })
+                          : ticket.map((doc, index) => {
+                              return (
+                                <tr key={doc.id}>
+                                  <td className={`${styles.ALtd}`}>
+                                    {" "}
+                                    <button onClick={() => Admin(doc)}>
+                                      {index + 1}
+                                    </button>
+                                  </td>
+                                  <td className={`${styles.ALtd}`}>
+                                    {doc.subject}
+                                  </td>
+                                  <td className={`${styles.ALtd}`}>
+                                    {doc.issueDate}
+                                  </td>
+                                  <td>
+                                    <button className={`${styles.ALbtn}`}>
+                                      <Link to={`TicketUpdate/${doc.id}`}>
+                                        Edit
+                                      </Link>
+                                    </button>
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                      </tbody>
                     </table>
-                   
                   </div>
                 </div>
               </section>
-            
             </Helmet>
              
           </div>
